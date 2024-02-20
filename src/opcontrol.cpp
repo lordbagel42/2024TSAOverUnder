@@ -1,20 +1,8 @@
 #include "main.h"
+#include "headers/globals.hpp"
 #include "headers/odometry.hpp"
 #include "headers/opcontrol.hpp"
 #include "headers/screensim.hpp"
-
-/**
- * Runs the operator control code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the operator
- * control mode.
- *
- * If no competition control is connected, this function will run immediately
- * following initialize().
- *
- */
-pros::Controller master(E_CONTROLLER_MASTER);
-pros::Motor intake (20);
 
 /**
  * Master controls left and right drive
