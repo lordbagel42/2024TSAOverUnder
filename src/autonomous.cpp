@@ -10,8 +10,5 @@ void autonomous()
     screen::print(TEXT_MEDIUM, 3, "Desired RPM: %d", turnRate);
     int loops = 0;
 
-    // wait for everything to finish setting up
-    delay(3500);
-
     chassis.moveToPose(0, 50, 90, 3000);
 }

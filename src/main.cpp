@@ -16,6 +16,7 @@
 void initialize()
 {
 	chassis.calibrate();
+	delay(3000);
 	pros::Task screenTask(position);
 	pros::Task arrowTask(drawArrow);
 	pros::Task drawPathTask(drawPath);
