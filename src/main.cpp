@@ -42,3 +42,6 @@ void competition_initialize() {}
 // opcontrol defined in opcontrol.cpp
 // autonomous defined in autonomous.cpp
 // odom defined in odometry.cpp
+// screen simulation defined in screensim.cpp
+// utilities are in utilities.cpp
+// initialize is in main.cpp (HERE)
