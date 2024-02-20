@@ -1,4 +1,6 @@
 #include "main.h"
+#include "headers/globals.hpp"
+#include "pros/apix.h"
 #include "headers/odometry.hpp"
 #include "headers/opcontrol.hpp"
 #include "headers/autonomous.hpp"
@@ -17,9 +19,10 @@ void initialize()
 {
 	chassis.calibrate();
 	delay(3000);
-	pros::Task screenTask(position);
-	pros::Task arrowTask(drawArrow);
-	pros::Task drawPathTask(drawPath);
+	// pros::Task screenTask(position);
+	// pros::Task arrowTask(drawArrow);
+	// pros::Task drawPathTask(drawPath);
+	lv_obj_t *createBtn
 }
 
 /**

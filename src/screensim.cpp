@@ -68,7 +68,7 @@ int scale = 100 / 72;
 /**
  * Draws the path of the selected auton.
  * NEEDS AUTON SELECTOR TO BE CREATED.
-*/
+ */
 
 ASSET(path1_txt);
 ASSET(path2_txt);
@@ -160,6 +160,5 @@ void drawArrow()
 		screen::set_pen(COLOR_WHITE);
 		screen::draw_line(endX, endY, arrowheadX1, arrowheadY1);
 		screen::draw_line(endX, endY, arrowheadX2, arrowheadY2);
-
 	}
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+#include "headers/globals.hpp"
 #include "headers/autonomous.hpp"
 #include "headers/odometry.hpp"
 

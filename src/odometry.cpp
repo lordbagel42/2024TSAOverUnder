@@ -1,12 +1,6 @@
 #include "main.h"
+#include "headers/globals.hpp"
 #include "headers/odometry.hpp"
-
-// motors
-Motor right_mtr_1(4, MOTOR_GEARSET_18, true);
-Motor left_mtr_1(1, MOTOR_GEARSET_18, false);
-// motor groups
-MotorGroup left_drive({left_mtr_1});
-MotorGroup right_drive({right_mtr_1});
 
 // drivetrain
 lemlib::Drivetrain drivetrain{
