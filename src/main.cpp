@@ -22,7 +22,7 @@ void initialize()
 	// pros::Task screenTask(position);
 	// pros::Task arrowTask(drawArrow);
 	// pros::Task drawPathTask(drawPath);
-	lv_obj_t *createBtn
+	lv_obj_t *createBtn(lv_obj_t *parent, lv_coord_t 0, lv_coord_t 0, lv_coord_t 25, lv_coord_t 10, int 0, const char *title);
 }
 
 /**
