@@ -75,7 +75,7 @@ ASSET(path2_txt);
 ASSET(path3_txt);
 void drawPath(asset pathName)
 {
-
+	pathName = path1_txt;
 	// Parse the path file
 	std::vector<lemlib::Pose> pathPoints = getData(pathName); // get list of path points
 

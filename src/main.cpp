@@ -9,6 +9,8 @@
 // #include "lemlib/api.hpp"
 // Included in the main.h file already!
 
+
+ASSET(path1_txt)
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *

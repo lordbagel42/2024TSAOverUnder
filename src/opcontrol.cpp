@@ -21,7 +21,7 @@ void opcontrol()
 		int rightX = master.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
 
 		// move the robot
-		chassis.curvature(leftY, rightX, 12.4);
+		chassis.curvature(leftY, rightX);
 
 		// delay so we don't destroy the CPU
 		pros::delay(10);
