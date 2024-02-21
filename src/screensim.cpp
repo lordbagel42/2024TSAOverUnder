@@ -1,8 +1,9 @@
 #include "main.h"
+#include "headers/globals.hpp"
 #include "headers/odometry.hpp"
 #include "headers/utilities.hpp"
+#include "headers/screensim.hpp"
 #include <cmath>
-// #include "pros/apix.h"
 
 /**
  * Displays current position to screen.
@@ -99,6 +100,9 @@ void drawPath(asset pathName)
  */
 void drawArrow()
 {
+	// clear the screen of the auton selector
+	lv_obj_clean(lv_scr_act());
+
 	// draw boundary box
 	screen::set_pen(COLOR_GREEN);
 	screen::draw_rect(boundaryX1, boundaryY1, boundaryX2, boundaryY2);

@@ -6,8 +6,8 @@ Controller master(pros::E_CONTROLLER_MASTER);
 Controller partner(pros::E_CONTROLLER_PARTNER);
 
 // motors
-Motor right_mtr_1(4, MOTOR_GEARSET_18, true);
-Motor left_mtr_1(1, MOTOR_GEARSET_18, false);
+Motor right_mtr_1(4, MOTOR_GEARSET_18, false);
+Motor left_mtr_1(1, MOTOR_GEARSET_18, true);
 
 // motor groups
 MotorGroup left_drive({left_mtr_1});

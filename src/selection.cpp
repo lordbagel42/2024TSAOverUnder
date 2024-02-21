@@ -3,7 +3,7 @@
 #include "headers/globals.hpp"
 
 /* Set up button map for both red and blue autonomouses */
-static const char *btnmMap[] = {"Auton 1", "Auton 2", "Auton 3", "\n", "Auton 4", "Auton 5", "\n", "Do Nothing", ""};
+static const char *btnmMap[] = {"Left 1", "Right 1", "\n", "Left 2", "Right 2", "\n", "Do Nothing", ""};
 
 
 /* Selector code when Red tab is pressed */
@@ -91,7 +91,7 @@ lv_res_t skillsBtnAction(lv_obj_t *btn)
 }
 
 /* Selector code for when Settings tab is pressed */
-lv_res_t settingsSliderAction(lv_obj_t *btn)
+lv_res_t settingsBtnAction(lv_obj_t *btn)
 {
 	// lvgl theme
 	lv_theme_t *th = lv_theme_nemo_init(286, NULL);
@@ -102,6 +102,7 @@ lv_res_t settingsSliderAction(lv_obj_t *btn)
 	printf("settings pressed");
 	return LV_RES_OK;
 }
+
 
 /* INITIALIZE SELECTOR */
 void selectorInit(){
@@ -116,14 +117,14 @@ void selectorInit(){
 	tabview = lv_tabview_create(lv_scr_act(), NULL);
 
 
-	// add 3 tabs (the tabs are page (lv_page) and can be scrolled
+	// add 4 tabs (the tabs are page (lv_page) and can be scrolled
 	lv_obj_t *redTab = lv_tabview_add_tab(tabview, "Red");
 	lv_obj_t *blueTab = lv_tabview_add_tab(tabview, "Blue");
 	lv_obj_t *skillsTab = lv_tabview_add_tab(tabview, "Skills");
 	lv_obj_t *settingsTab = lv_tabview_add_tab(tabview, "Settings");
 
 	// add content to the tabs
-	// button matrix
+	// red tab
 	lv_obj_t *redBtnm = lv_btnm_create(redTab, NULL);
 	lv_btnm_set_map(redBtnm, btnmMap);
 	lv_btnm_set_action(redBtnm, redBtnmAction);
@@ -144,8 +145,8 @@ void selectorInit(){
 
 	// skills tab
 	lv_obj_t *skillsBtn = lv_btn_create(skillsTab, NULL);
-	lv_obj_t *label = lv_label_create(skillsBtn, NULL);
-	lv_label_set_text(label, "Skills");
+	lv_obj_t *skillsLabel = lv_label_create(skillsBtn, NULL);
+	lv_label_set_text(skillsLabel, "Skills");
 	lv_btn_set_action(skillsBtn, LV_BTN_ACTION_CLICK, skillsBtnAction);
 	// lv_btn_set_state(skillsBtn, LV_BTN_STATE_TGL_REL);
 	lv_obj_set_size(skillsBtn, 450, 50);
@@ -153,10 +154,12 @@ void selectorInit(){
 	lv_obj_align(skillsBtn, NULL, LV_ALIGN_CENTER, 0, 0);
 
 	// settings tab. identical to skills tab but controls a slider named flywheel
-	lv_obj_t *flywheelSlider = lv_slider_create(settingsTab, NULL);
-	lv_obj_t *label = lv_label_create(flywheelSlider, NULL);
-	lv_label_set_text(label, "Flywheel");
-	lv_slider_set_action(flywheelSlider, settingsSliderAction);
-
-
+	lv_obj_t *settingsBtn = lv_btn_create(settingsTab, NULL);
+	lv_obj_t *settingsLabel = lv_label_create(settingsBtn, NULL);
+	lv_label_set_text(settingsLabel, "No settings available");
+	lv_btn_set_action(settingsBtn, LV_BTN_ACTION_CLICK, settingsBtnAction);
+	// lv_btn_set_state(skillsBtn, LV_BTN_STATE_TGL_REL);
+	lv_obj_set_size(settingsBtn, 450, 50);
+	lv_obj_set_pos(settingsBtn, 0, 100);
+	lv_obj_align(settingsBtn, NULL, LV_ALIGN_CENTER, 0, 0);
 }

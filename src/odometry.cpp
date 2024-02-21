@@ -7,8 +7,8 @@ lemlib::Drivetrain drivetrain{
 	&left_drive,  // left drivetrain motors
 	&right_drive, // right drivetrain motors
 	12,			  // track width
-	4,		  // wheel diameter
-	100,		  // wheel rpm
+	4,			  // wheel diameter
+	200,		  // wheel rpm
 	2			  // chase power
 };
 
@@ -22,11 +22,11 @@ lemlib::TrackingWheel right_tracking_wheel(&right_enc, 3.25, 5);
 
 // odometry
 lemlib::OdomSensors sensors{
-	nullptr,  // vertical tracking wheel 1
+	nullptr, // vertical tracking wheel 1
 	nullptr, // vertical tracking wheel 2
-	nullptr,			   // no horizontal tracking wheel
-	nullptr,			   // no secondary horizontal tracking wheel
-	nullptr				   // no inertial sensor. sadly. :(
+	nullptr, // no horizontal tracking wheel
+	nullptr, // no secondary horizontal tracking wheel
+	nullptr	 // no inertial sensor. sadly. :(
 };
 
 // lateral motion controller

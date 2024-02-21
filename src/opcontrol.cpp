@@ -13,6 +13,10 @@
  */
 void opcontrol()
 {
+	// startup some display tasks
+	pros::Task screenTask(position);
+	pros::Task arrowTask(drawArrow);
+
 	// loop forever
 	int count = 0;
 	while (true)
@@ -22,7 +26,7 @@ void opcontrol()
 		int rightX = master.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
 
 		// move the robot
-		chassis.curvature(leftY, rightX, 12.4);
+		chassis.arcade(leftY, rightX, 12.4);
 		// intake if R1 pressed, spit if R2 pressed
 		if (master.get_digital(E_CONTROLLER_DIGITAL_R1)) {
 			intake = -127;
@@ -35,10 +39,16 @@ void opcontrol()
 		}
 
 		if (!(count % 25)) {
-		// Only print every 50ms, the controller text update rate is slow
+			// Only print every 50ms, the controller text update rate is slow
 			master.print(0, 0, "Counter: %d", count);
 		}
 		count++;
+
+		if (master.get_digital(E_CONTROLLER_DIGITAL_A)) {
+			// clear LVGL screen
+			lv_obj_clean(lv_scr_act());
+		}
+		else {}
 
 		// delay so we don't destroy the CPU
 		pros::delay(10);

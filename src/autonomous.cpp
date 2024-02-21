@@ -9,6 +9,10 @@ ASSET(path1_txt);
 
 void autonomous()
 {
+    // startup some display tasks
+    pros::Task screenTask(position);
+	pros::Task arrowTask(drawArrow);
+    delay(20);
 
     switch (autonSelection)
     {
