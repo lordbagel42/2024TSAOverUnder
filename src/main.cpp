@@ -5,8 +5,7 @@
 #include "headers/opcontrol.hpp"
 #include "headers/autonomous.hpp"
 #include "headers/screensim.hpp"
-#include "headers/lvglutilities.hpp"
-#include "autoSelect/selection.h"
+#include "headers/selection.hpp"
 
 // #include "lemlib/api.hpp"
 // Included in the main.h file already!

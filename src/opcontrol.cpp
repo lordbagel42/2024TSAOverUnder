@@ -13,6 +13,7 @@
 void opcontrol()
 {
 	// loop forever
+	int count = 0;
 	while (true)
 	{
 		// get left y and right x positions
@@ -31,6 +32,12 @@ void opcontrol()
 		else {
 			intake = 0;
 		}
+
+		if (!(count % 25)) {
+		// Only print every 50ms, the controller text update rate is slow
+			master.print(0, 0, "Counter: %d", count);
+		}
+		count++;
 
 		// delay so we don't destroy the CPU
 		pros::delay(10);
