@@ -16,5 +16,8 @@ MotorGroup right_drive({right_mtr_1});
 // intake
 Motor intake(21);
 
+// auton selector
+int autonSelection = SKILLS; // specifies the default auton selected
+
 
 int autonomousPreSet = 0;

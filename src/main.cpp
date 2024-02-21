@@ -1,11 +1,12 @@
 #include "main.h"
 #include "headers/globals.hpp"
+
 #include "pros/apix.h"
 #include "headers/odometry.hpp"
 #include "headers/opcontrol.hpp"
 #include "headers/autonomous.hpp"
 #include "headers/screensim.hpp"
-#include "headers/selection.hpp"
+#include "headers/selection.h"
 
 // #include "lemlib/api.hpp"
 // Included in the main.h file already!
@@ -21,7 +22,7 @@ void initialize()
 	chassis.calibrate();
     lv_init();
 	delay(3000);
-	selector::init();
+	selectorInit();
 	// pros::Task screenTask(position);
 	// pros::Task arrowTask(drawArrow);
 	// pros::Task drawPathTask(drawPath);

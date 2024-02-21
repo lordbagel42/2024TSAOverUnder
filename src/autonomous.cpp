@@ -1,47 +1,54 @@
 #include "main.h"
 #include "headers/globals.hpp"
+
 #include "headers/autonomous.hpp"
 #include "headers/odometry.hpp"
-#include "headers/selection.hpp"
+#include "headers/selection.h"
 
 ASSET(path1_txt);
+
 void autonomous()
 {
-    if (selector::auton == 1)
-    { // run auton for Front Red
-        // variables needed for things
-        int turnRate = 32;
-        screen::print(TEXT_MEDIUM, 3, "Desired RPM: %d", turnRate);
-        int loops = 0;
 
-        chassis.moveToPose(0, 50, 90, 3000);
-    }
+    switch (autonSelection)
+    {
+    case RED_1:
+        // Auton function here
+        break;
+    case BLUE_1:
+        // Auton function here
+        break;
 
-    else if (selector::auton == 2) // run auton for Back Red
-    {
-    }
+    case RED_2:
+        // Auton function here
+        break;
+    case BLUE_2:
+        // Auton function here
+        break;
 
-    else if (selector::auton == 3) // no auton for Red
-    {
-    }
+    case RED_3:
+        // Auton function here
+        break;
+    case BLUE_3:
+        // Auton function here
+        break;
 
-    else if (selector::auton == -1) // run auton for Front Blue
-    {
-    }
-    
-    else if (selector::auton == -2) // run auton for Back Blue
-    {
-    }
+    case RED_4:
+        // Auton function here
+        break;
+    case BLUE_4:
+        // Auton function here
+        break;
 
-    else if (selector::auton == -3) // no auton for Blue
-    {
-    }
+    case RED_5:
+        // Auton function here
+        break;
+    case BLUE_5:
+        // Auton function here
+        break;
 
-    else if (selector::auton == 0) // skills auton
-    {
+    case SKILLS:
+        // Skills function here
+        break;
     }
-
-    else // no auton
-    {
-    };
 }
