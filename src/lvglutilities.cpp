@@ -17,7 +17,8 @@ lv_obj_t *createBtn(lv_obj_t *parent, lv_coord_t x, lv_coord_t y, lv_coord_t wid
 	return btn;
 }
 
-lv_style_t *createBtnStyle(lv_style_t *copy, lv_color_t rel, lv_color_t pr, lv_color_t tglRel, lv_color_t tglPr, lv_color_t tglBorder, lv_color_t textColor, lv_obj_t *btn)
+lv_style_t *createBtnStyle(lv_style_t *copy, lv_color_t rel, lv_color_t pr,
+lv_color_t tglRel, lv_color_t tglPr, lv_color_t tglBorder, lv_color_t textColor, lv_obj_t *btn)
 {
 	lv_style_t *btnStyle = (lv_style_t *)malloc(sizeof(lv_style_t) * 4);
 
@@ -64,4 +65,14 @@ void btnSetToggled(lv_obj_t *btn, bool toggled)
 {
 	if (toggled != (lv_btn_get_state(btn) >= 2))
 		lv_btn_toggle(btn);
+}
+
+lv_obj_t *createLabel(lv_obj_t *parent, lv_coord_t x, lv_coord_t y, lv_coord_t width, lv_coord_t height, int id, const char *title)
+{
+	lv_obj_t *label = lv_label_create(parent, NULL);
+	lv_obj_set_pos(label, x, y);
+	lv_obj_set_size(label, width, height);
+	lv_obj_set_free_num(label, id);
+
+	return label;
 }
