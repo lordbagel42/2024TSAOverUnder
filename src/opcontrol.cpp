@@ -23,19 +23,26 @@ void opcontrol()
 	{
 		// get left y and right x positions
 		int leftY = master.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
-		int rightX = master.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
+		int leftX = -master.get_analog(E_CONTROLLER_ANALOG_LEFT_X);
 
 		// move the robot
-		chassis.arcade(leftY, rightX, 12.4);
-		// intake if R1 pressed, spit if R2 pressed
+		chassis.arcade(leftY, leftX, 12.4);
+		// intake if R1 pressed, spit if R2 pressed 
 		if (master.get_digital(E_CONTROLLER_DIGITAL_R1)) {
-			intake = -127;
+			intake = 127;
 		}
 		else if (master.get_digital(E_CONTROLLER_DIGITAL_R2)) {
-			intake = 127;
+			intake = -127;
 		}
 		else {
 			intake = 0;
+		}
+
+		if (master.get_digital(E_CONTROLLER_DIGITAL_A)) {
+			cata = 127;
+		}
+		else {
+			cata = 0;
 		}
 
 		if (!(count % 25)) {
@@ -47,6 +54,12 @@ void opcontrol()
 		if (master.get_digital(E_CONTROLLER_DIGITAL_A)) {
 			// clear LVGL screen
 			lv_obj_clean(lv_scr_act());
+		}
+		else {}
+
+		if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)) {
+			// start auton
+			autonomous();
 		}
 		else {}
 

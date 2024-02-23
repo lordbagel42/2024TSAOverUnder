@@ -10,11 +10,16 @@ extern pros::Controller master;
 extern pros::Controller partner;
 
 // motors
-extern pros::Motor right_mtr_1, left_mtr_1;
+extern pros::Motor right_mtr_1, right_mtr_2, left_mtr_1, left_mtr_2;
 
 // motor groups
 extern pros::MotorGroup left_drive, right_drive;
+
+// intake
 extern pros::Motor intake;
+
+// catapult
+extern pros::Motor cata;
 
 // auton selector
 extern int autonSelection;
