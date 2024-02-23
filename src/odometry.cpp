@@ -25,7 +25,7 @@ lemlib::OdomSensors sensors{
 	nullptr, // vertical tracking wheel 1
 	nullptr, // vertical tracking wheel 2
 	nullptr, // no horizontal tracking wheel
-	nullptr, // no secondary horizon tal tracking wheel
+	nullptr, // no secondary horizontal tracking wheel
 	nullptr	 // no inertial sensor. sadly. :(
 };
 
