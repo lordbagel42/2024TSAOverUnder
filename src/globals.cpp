@@ -22,7 +22,7 @@ Motor intake(11, MOTOR_GEARSET_18, true);
 Motor cata(16, MOTOR_GEARSET_36, false);
 
 // auton selector
-int autonSelection = SKILLS; // specifies the default auton selected
+int autonSelection = BLUE_1; // specifies the default auton selected
 
 
 int autonomousPreSet = 0;

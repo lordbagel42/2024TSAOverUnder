@@ -21,6 +21,7 @@ void autonomous()
         break;
     case BLUE_1:
         // Auton function here
+        chassis.follow(path1_txt, 15, 4000);
         break;
 
     case RED_2:

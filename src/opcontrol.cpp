@@ -23,10 +23,10 @@ void opcontrol()
 	{
 		// get left y and right x positions
 		int leftY = master.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
-		int leftX = -master.get_analog(E_CONTROLLER_ANALOG_LEFT_X);
+		int rightX = -master.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
 
 		// move the robot
-		chassis.arcade(leftY, leftX, 12.4);
+		chassis.arcade(leftY, rightX);
 		// intake if R1 pressed, spit if R2 pressed 
 		if (master.get_digital(E_CONTROLLER_DIGITAL_R1)) {
 			intake = 127;

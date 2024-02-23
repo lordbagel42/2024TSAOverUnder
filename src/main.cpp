@@ -20,7 +20,7 @@
 void initialize()
 {
 	chassis.calibrate();
-	chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
+	chassis.setPose(-24.148, 1.067, 0); // X: 0, Y: 0, Heading: 0
     lv_init();
 	delay(3000);
 	selectorInit();
